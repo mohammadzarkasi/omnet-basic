@@ -1,0 +1,8 @@
+# cara import project ini ke omnet project explorer
+1. klik menu File
+2. klik menu Import
+3. pilih kategori General
+4. pilih Import Existing Project
+5. sesuaikan lokasi root directory
+6. centang project yang dimaksud
+7. klik selesai/import

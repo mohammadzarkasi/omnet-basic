@@ -3,6 +3,7 @@
 	<name>mozar1</name>
 	<comment></comment>
 	<projects>
+		<project>inet4.4</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

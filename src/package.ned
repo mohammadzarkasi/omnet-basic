@@ -1,10 +1,16 @@
 // designate the NED package of this folder
 package mozar1;
 
+//import inet.tutorials.protocol.Node;
+
+
 // namespace of module C++ classes
 @namespace(mozar1);
 
 @license(LGPL);
+
+//import inet.
+import ned.*;
 
 
 // membuat simple-module sendiri
@@ -29,6 +35,7 @@ simple MyRouting
         input in;
         output out;
 }
+
 simple MyQueue
 {
     parameters:
@@ -52,13 +59,14 @@ module MyNode
         inout port[];
 
     submodules:
-        app: MyApp;
+        app: MyApp {
+            @display("p=30,30");
+        }
         routing: MyRouting {
             @display("p=219,30");
         }
         queue[sizeof(port)]: MyQueue {
-
-            @display("p=153,149");
+            @display("p=110,149");
         }
     connections:
         routing.localOut --> app.in;
@@ -99,10 +107,18 @@ network MyNetwork1
         node4: Node {
             @display("p=392,155");
         }
-        node5: Node;
-        node6: Node;
-        myApp1: MyApp;
-        myNode1: MyNode;
+        node5: Node{
+        	@display("p=550,155");
+        }
+        node6: Node{
+        	@display("p=200,250");
+        }
+        myApp1: MyApp{
+        	@display("p=40,250");
+        }
+        myNode1: MyNode{
+        	@display("p=300,200");
+        }
     connections:
         // menghubungkan node x ke node y melalui suatu medium komunikasi 
         node1.port++ <--> {  datarate = 100Mbps; } <--> node2.port++;
