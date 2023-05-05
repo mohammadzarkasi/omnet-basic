@@ -31,7 +31,7 @@ network Wireless1
         	@display("p=40,30");
         }
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium{
-        	@display("p=120,30");
+        	@display("p=140,30");
         }
         host1: WirelessHost{
         	@display("p=50,150");
