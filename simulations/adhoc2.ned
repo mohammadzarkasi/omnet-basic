@@ -31,53 +31,43 @@ network Adhoc2
 {
     parameters:
     submodules:
-        host0: AdhocHost
-        {
+        host0: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host1: AdhocHost
-        {
+        host1: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host2: AdhocHost
-        {
+        host2: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host3: AdhocHost
-        {
+        host3: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host4: AdhocHost
-        {
+        host4: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host5: AdhocHost
-        {
+        host5: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host6: AdhocHost
-        {
+        host6: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host7: AdhocHost
-        {
+        host7: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
-        host8: AdhocHost
-        {
+        host8: AdhocHost {
             parameters:
-                @display("r=,,#707070");
+                @display("r=,,#707070;p=176,315");
         }
-        host9: AdhocHost
-        {
+        host9: AdhocHost {
             parameters:
                 @display("r=,,#707070");
         }
@@ -87,15 +77,13 @@ network Adhoc2
 //            parameters:
 //                @display("p=60,50");
 //        }
-        
-        radioMedium: <> like IRadioMedium
-        {
+
+        radioMedium: <> like IRadioMedium {
             parameters:
                 @display("p=60,50");
         }
 
-        configurator: Ipv4NetworkConfigurator
-        {
+        configurator: Ipv4NetworkConfigurator {
             @display("p=140,50");
         }
 }
