@@ -32,6 +32,33 @@ import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMed
 import inet.visualizer.common.IntegratedVisualizer;
 import inet.visualizer.common.NetworkRouteVisualizer;
 
+
+//simple MyRectangle {
+//    parameters:
+//        double width @unit(m);
+//        double height @unit(m);
+//        double x @unit(m);
+//        double y @unit(m);
+//    display:
+//        rectangle "p=0,0;50,30,black";
+//        fill: transparent, gray;
+//}
+
+//simple MyRectangle {
+//    parameters:
+//        double width @unit(m);
+//        double height @unit(m);
+//        double x @unit(m);
+//        double y @unit(m);
+//    @display()
+//        rectangle {
+//            p = 0,0,50,30;
+//            fill-color = "gray";
+//            fill-mode = "transparent";
+//            line-color = "black";
+//        }
+//}
+
 network Adhoc4
 {
     @display("bgb=660,630");
