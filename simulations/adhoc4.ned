@@ -31,6 +31,7 @@ import inet.node.wireless.AccessPoint;
 import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
 import inet.visualizer.common.IntegratedVisualizer;
 import inet.visualizer.common.NetworkRouteVisualizer;
+import inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer;
 
 
 //simple MyRectangle {
@@ -63,7 +64,10 @@ network Adhoc4
 {
     @display("bgb=660,630");
     submodules:
-        visualizer: IntegratedVisualizer {
+//        visualizer: IntegratedVisualizer {
+//            @display("p=100,50");
+//        }
+        visualizer: IntegratedCanvasVisualizer {
             @display("p=100,50");
         }
         configurator: Ipv4NetworkConfigurator {
