@@ -32,6 +32,7 @@ import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMed
 import inet.visualizer.common.IntegratedVisualizer;
 import inet.visualizer.common.NetworkRouteVisualizer;
 import inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer;
+import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
 
 
 //simple MyRectangle {
@@ -76,8 +77,12 @@ network Adhoc4
         radioMedium: Ieee80211ScalarRadioMedium {
             @display("p=100,250");
         }
+//        radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium  {
+//            @display("p=100,250");
+//        }
         source: AodvRouter {
             @display("p=229,46");
+            
         }
         destination: AodvRouter {
             @display("p=488.832,512.952");
