@@ -17,67 +17,67 @@ package mozar1;
 
 simple Z1App{
     parameters:
-        int destAddress;
+//        int destAddress;
         @display("i=block/browser");
     gates:
         input in;
         output out;
 }
 
-simple Z1Routing
-{
-    parameters:
-        int destAddress;
-	    //@display("i=block/browser");
-    gates:
-        input localIn;
-        output localOut;
-        input in;
-        output out;
-}
+//simple Z1Routing
+//{
+//    parameters:
+//        int destAddress;
+//	    //@display("i=block/browser");
+//    gates:
+//        input localIn;
+//        output localOut;
+//        input in;
+//        output out;
+//}
 
-simple Z1Queue
-{
-    parameters:
-        int capacity;
-        @display("i=block/queue");
-    gates:
-        input in;
-        output out;
-}
+//simple Z1Queue
+//{
+//    parameters:
+//        int capacity;
+//        @display("i=block/queue");
+//    gates:
+//        input in;
+//        output out;
+//}
 
-module Z1Node {
-    parameters:
-        int address;
-        @display("i=misc/node_vs,gold");
-
-    gates:
-        inout port[];
-    
-    submodules:
-        app: MyApp {
-            @display("p=30,30");
-        }
-        routing: MyRouting {
-            @display("p=219,30");
-        }
-        queue[sizeof(port)]: MyQueue {
-            @display("p=110,149");
-        }
-        
-    connections:
-        routing.localOut --> app.in;
-        routing.localIn <-- app.out;
-        
-//        for i=0..sizeof(port)-1 {
-//            routing.out[i] --> queue[i].in;
-//            routing.in[i] <-- queue[i].out;
+//module Z1Node {
+//    parameters:
+//        int address;
+//        @display("i=misc/node_vs,gold");
 //
-//            queue[i].line <--> port[i];
-        
+//    gates:
+//        inout port[];
+//    
+//    submodules:
+//        app: MyApp {
+//            @display("p=30,30");
 //        }
-
-}
+//        routing: MyRouting {
+//            @display("p=219,30");
+//        }
+//        queue[sizeof(port)]: MyQueue {
+//            @display("p=110,149");
+//        }
+//        
+//    connections:
+//        routing.localOut --> app.in;
+//        routing.localIn <-- app.out;
+//        
+////        for i=0..sizeof(port)-1 {
+////            routing.out[i] --> queue[i].in;
+////            routing.in[i] <-- queue[i].out;
+////
+////            queue[i].line <--> port[i];
+//        
+////        }
+//
+//}
 
 network Z1Network{
 	// membuat channel (medium komunikasi) untuk menghemat penulisan 
@@ -86,6 +86,12 @@ network Z1Network{
         channel C100 extends ned.DatarateChannel
         {
             datarate = 100Mbps;
+            delay = 100ms;
         }
-	
+	submodules:
+	    tic: Z1App;
+	    app2: Z1App;
+	connections:
+	    tic.out --> C100 --> app2.in;
+	    tic.in  <-- C100 <-- app2.out; 
 }
