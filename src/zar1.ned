@@ -89,8 +89,14 @@ network Z1Network{
             delay = 100ms;
         }
 	submodules:
-	    tic: Z1App;
-	    app2: Z1App;
+	    tic: Z1App{
+	    	parameters:
+	    	    @display("i=,gold");
+	    }
+	    app2: Z1App{
+	    	parameters:
+	    	    @display("i=,blue");
+	    }
 	connections:
 	    tic.out --> C100 --> app2.in;
 	    tic.in  <-- C100 <-- app2.out; 
