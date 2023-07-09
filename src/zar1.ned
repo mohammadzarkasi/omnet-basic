@@ -36,10 +36,23 @@ simple Z1Routing
         output out;
 }
 
+simple Z1Queue
+{
+    parameters:
+        int capacity;
+        @display("i=block/queue");
+    gates:
+        input in;
+        output out;
+}
+
 module Z1Node {
     parameters:
         int address;
         @display("i=misc/node_vs,gold");
+
+    gates:
+        inout port[];
     
     submodules:
         app: MyApp {
@@ -48,9 +61,22 @@ module Z1Node {
         routing: MyRouting {
             @display("p=219,30");
         }
+        queue[sizeof(port)]: MyQueue {
+            @display("p=110,149");
+        }
+        
     connections:
         routing.localOut --> app.in;
         routing.localIn <-- app.out;
+        
+//        for i=0..sizeof(port)-1 {
+//            routing.out[i] --> queue[i].in;
+//            routing.in[i] <-- queue[i].out;
+//
+//            queue[i].line <--> port[i];
+        
+//        }
+
 }
 
 network Z1Network{
