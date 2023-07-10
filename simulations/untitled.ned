@@ -18,30 +18,30 @@ package mozar1.simulations;
 // numOfHosts: 10
 // parametric: true
 // static:     false
-
-import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
-import inet.nodes.inet.AdhocHost;
-import inet.world.radio.ChannelControl;
-
-network Untitled
-{
-    parameters:
-        int numHosts;
-    submodules:
-        host[numHosts]: AdhocHost
-        {
-            parameters:
-                @display("r=,,#707070");
-        }
-
-        channelControl: ChannelControl
-        {
-            parameters:
-                @display("p=60,50");
-        }
-
-        configurator: IPv4NetworkConfigurator
-        {
-            @display("p=140,50");
-        }
-}
+//
+//import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
+//import inet.nodes.inet.AdhocHost;
+//import inet.world.radio.ChannelControl;
+//
+//network Untitled
+//{
+//    parameters:
+//        int numHosts;
+//    submodules:
+//        host[numHosts]: AdhocHost
+//        {
+//            parameters:
+//                @display("r=,,#707070");
+//        }
+//
+//        channelControl: ChannelControl
+//        {
+//            parameters:
+//                @display("p=60,50");
+//        }
+//
+//        configurator: IPv4NetworkConfigurator
+//        {
+//            @display("p=140,50");
+//        }
+//}
