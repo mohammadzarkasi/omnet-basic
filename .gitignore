@@ -1,2 +1,7 @@
 out/
 simulations/results/
+
+
+*.sca
+*.vci
+*.vec
