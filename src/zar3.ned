@@ -21,18 +21,19 @@ import inet.physicallayer.wireless.common.medium.RadioMedium;
 import inet.physicallayer.wireless.unitdisk.UnitDiskRadioMedium;
 import inet.node.contract.INetworkNode;
 
-network Z4Network{
-	parameters:
-//        @display("bgb=650,500;bgg=100,1,grey95");
+network Z4Network
+{
+    parameters:
+        //        @display("bgb=650,500;bgg=100,1,grey95");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
 
         @figure[rcvdPkText](type=indicatorText; pos=150,20; anchor=w; font=,8; textFormat="packets received: %g"; initialValue=0);
         @statistic[packetReceived](source=hostA2.app[0].packetReceived; record=figure(count); targetFigure=rcvdPkText);
-        
-        
-        
+
+
+
     submodules:
-	    visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
             @display("p=20,20");
         }
         configurator: Ipv4NetworkConfigurator {
@@ -41,25 +42,25 @@ network Z4Network{
         radioMedium: UnitDiskRadioMedium {
             @display("p=100,20");
         }
-        
+
         hostA1: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,100");
+            @display("p=49.9788,110.42486");
         }
         hostA2: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,103");
+            @display("p=49.9788,113.53675");
         }
-        
+
         hostA3: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,107");
+            @display("p=49.9788,117.40303");
         }
         hostA4: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,110");
+            @display("p=49.9788,120.51492");
         }
         hostA5: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,113");
+            @display("p=49.9788,123.43821");
         }
-        
-        
+
+
         hostB1: <default("WirelessHost")> like INetworkNode {
             @display("p=50,140");
         }
@@ -87,8 +88,8 @@ network Z4Network{
         hostB9: <default("WirelessHost")> like INetworkNode {
             @display("p=56,148");
         }
-        
-        
+
+
         hostC1: <default("WirelessHost")> like INetworkNode {
             @display("p=60,140");
         }
@@ -116,7 +117,7 @@ network Z4Network{
         hostC9: <default("WirelessHost")> like INetworkNode {
             @display("p=66,148");
         }
-        
+
         hostD1: <default("WirelessHost")> like INetworkNode {
             @display("p=72,140");
         }
@@ -126,7 +127,7 @@ network Z4Network{
         hostD3: <default("WirelessHost")> like INetworkNode {
             @display("p=72,148");
         }
-        
+
         hostE1: <default("WirelessHost")> like INetworkNode {
             @display("p=76,140");
         }
@@ -136,7 +137,7 @@ network Z4Network{
         hostE3: <default("WirelessHost")> like INetworkNode {
             @display("p=76,148");
         }
-        
+
         hostF1: <default("WirelessHost")> like INetworkNode {
             @display("p=80,140");
         }
@@ -146,7 +147,7 @@ network Z4Network{
         hostF3: <default("WirelessHost")> like INetworkNode {
             @display("p=80,148");
         }
-        
+
         hostG1: <default("WirelessHost")> like INetworkNode {
             @display("p=84,140");
         }
@@ -155,5 +156,10 @@ network Z4Network{
         }
         hostG3: <default("WirelessHost")> like INetworkNode {
             @display("p=84,148;i=device/card");
+        }
+
+
+        sink1: <default("WirelessHost")> like INetworkNode {
+            @display("p=49.9788,132;i=device/antennatower");
         }
 }
