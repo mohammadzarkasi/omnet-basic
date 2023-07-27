@@ -28,7 +28,7 @@ network Z4Network
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
 
         @figure[rcvdPkText](type=indicatorText; pos=150,20; anchor=w; font=,8; textFormat="packets received: %g"; initialValue=0);
-        @statistic[packetReceived](source=hostA2.app[0].packetReceived; record=figure(count); targetFigure=rcvdPkText);
+        @statistic[packetReceived](source=sink1.app[0].packetReceived; record=figure(count); targetFigure=rcvdPkText);
 
 
 
