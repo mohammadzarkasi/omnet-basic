@@ -5,3 +5,6 @@ simulations/results/
 *.sca
 *.vci
 *.vec
+*.elog
+*.anf
+
